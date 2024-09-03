@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://kit.fontawesome.com/e4370135f3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sign.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #ffffff;
+            border: none;
+            box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+            padding: 15px 20px;
+            width: 410px;
+            border-radius: 12px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin: 10px;
+        }
+
+        ::placeholder {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .form button {
+            align-self: flex-end;
+        }
+
+        .flex-column>label {
+            color: #151717;
+            font-weight: 600;
+        }
+
+        .inputForm {
+            border: 1.5px solid #ecedec;
+            border-radius: 10px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            transition: 0.2s ease-in-out;
+        }
+
+        .input {
+            margin-left: 10px;
+            border-radius: 10px;
+            border: none;
+            width: 85%;
+            height: 100%;
+        }
+
+        .input:focus {
+            outline: none;
+        }
+
+        .inputForm:focus-within {
+            border: 1.5px solid #2d79f3;
+        }
+
+        .flex-row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .flex-row>div>label {
+            font-size: 14px;
+            color: black;
+            font-weight: 400;
+        }
+
+        .span {
+            font-size: 14px;
+            margin-left: 5px;
+            color: #2d79f3;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .button-submit {
+            /* margin: 20px 0 10px 0; */
+            background-color: #151717;
+            border: none;
+            color: white;
+            font-size: 15px;
+            font-weight: 500;
+            border-radius: 10px;
+            height: 40px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .button-submit:hover {
+            background-color: #252727;
+        }
+
+        .p {
+            text-align: center;
+            color: black;
+            font-size: 14px;
+            margin: 2px 0;
+        }
+
+        .btn {
+            width: 100%;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 500;
+            gap: 10px;
+            border: 1px solid #ededef;
+            background-color: white;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+        }
+
+        .btn:hover {
+            border: 1px solid #2d79f3;
+            ;
+        }
+
+        #sendOtpBtn {
+            background-color: #151717;
+            border: none;
+            color: white;
+            padding: 3px 5px;
+
+            border-radius: 7px;
+            border: none;
+            font-size: 0.9rem;
+        }
+
+        #verifyOtpBtn {
+            background-color: #151717;
+            border: none;
+            color: white;
+            padding: 3px 5px;
+
+            border-radius: 7px;
+            border: none;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        #otpSection {
+            display: none;
+        }
+
+        .otp-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .otp-input {
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            /* border: 1px solid #ccc; */
+            border-radius: 5px;
+            font-size: 18px;
+            border: none;
+            border: 1.5px solid #001525;
+        }
+
+        .otp-input:focus-within {
+            border: 1.5px solid #2d79f3;
+        }
+
+        .otp-input:focus {
+            outline: none;
+        }
+
+        label.test {
+            font-size: 16px;
+            color: black;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d-flex justify-content-center mt-5">
+        <form class="form d-flex flex-column justify-content-center" action="/sign" method="post"
+            onsubmit="return validateForm()">
+            <div class="d-flex justify-content-center">
+                <img src="{{ url_for('static', filename='logo.jpg') }}" height="100px" width="100px">
+            </div>
+            <div class="flex-column">
+                <label>Username/Email</label>
+            </div>
+            <div class="inputForm">
+                <input type="text" name="username" class="input" placeholder="Enter your Username or email">
+            </div>
+
+            
+            <div class="flex-column">
+                <label>Password </label>
+            </div>
+            <div class="inputForm">
+                <input type="password" id="passInput" class="input" name="password" placeholder="Enter your Password">
+                <i id="eyeIcon" class="fa-solid fa-eye-slash"></i>
+            </div>
+            <div>
+                <button type="submit" class="button-submit" disabled>Log in</button>
+
+            </div>
+
+            <p class="p line">Or With</p>
+            <button class="btn google">
+                <a href="{{ url_for('googleLogin') }}" style="text-decoration: none;">
+                    <svg xml:space="preserve" style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512" y="0px"
+                        x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                        id="Layer_1" width="20" version="1.1">
+                        <path d="M113.47,309.408L95.648,375.94l-65.139,1.378C11.042,341.211,0,299.9,0,256
+              c0-42.451,10.324-82.483,28.624-117.732h0.014l57.992,10.632l25.404,57.644c-5.317,15.501-8.215,32.141-8.215,49.456
+              C103.821,274.792,107.225,292.797,113.47,309.408z" style="fill:#FBBB00;"></path>
+                        <path d="M507.527,208.176C510.467,223.662,512,239.655,512,256c0,18.328-1.927,36.206-5.598,53.451
+              c-12.462,58.683-45.025,109.925-90.134,146.187l-0.014-0.014l-73.044-3.727l-10.338-64.535
+              c29.932-17.554,53.324-45.025,65.646-77.911h-136.89V208.176h138.887L507.527,208.176L507.527,208.176z"
+                            style="fill:#518EF8;"></path>
+                        <path d="M416.253,455.624l0.014,0.014C372.396,490.901,316.666,512,256,512
+              c-97.491,0-182.252-54.491-225.491-134.681l82.961-67.91c21.619,57.698,77.278,98.771,142.53,98.771
+              c28.047,0,54.323-7.582,76.87-20.818L416.253,455.624z" style="fill:#28B446;"></path>
+                        <path d="M419.404,58.936l-82.933,67.896c-23.335-14.586-50.919-23.012-80.471-23.012
+              c-66.729,0-123.429,42.957-143.965,102.724l-83.397-68.276h-0.014C71.23,56.123,157.06,0,256,0
+              C318.115,0,375.068,22.126,419.404,58.936z" style="fill:#F14336;"></path>
+                    </svg>
+
+                    Google
+                </a></button>
+        </form>
+    </div>
+
+    <script>
+        let eyeIcon = document.getElementById("eyeIcon");
+        let passInput = document.getElementById("passInput");
+        eyeIcon.addEventListener("click", function () {
+            if (passInput.type === "password") {
+                passInput.type = "text";
+
+            } else {
+                passInput.type = "password";
+            }
+
+            eyeIcon.classList.toggle("fa-eye");
+        })
+        function sendOtp() {
+            var emailField = document.getElementById('email');
+            document.getElementById('otpSection').style.display = 'block';
+            document.getElementById('verifyOtpBtn').style.display = 'block';
+
+            if (!emailField) {
+                console.error('Email input field not found');
+                alert("Enter email address for otp verification");
+                return;
+            }
+            var email = emailField.value;
+            console.log("Sending OTP to:", email); // Log email to console
+            fetch('/send_otp', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email: email }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.getElementById('otpSection').style.display = 'block';
+                        alert('OTP sent to your email');
+                    } else {
+                        alert('Error sending OTP');
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
+
+        function verifyOtp() {
+            var otpField = document.getElementById('otp');
+            var emailField = document.getElementById('email');
+            if (!otpField || !emailField) {
+                console.error('OTP input field or Email input field not found');
+                return;
+            }
+            var otp = otpField.value;
+            var email = emailField.value;
+            console.log("Verifying OTP:", otp, "for email:", email); // Log OTP and email to console
+            fetch('/verify_otp', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email: email, otp: otp }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('OTP verified successfully');
+                        document.querySelector('.button-submit').disabled = false;
+                    } else {
+                        alert('Invalid OTP');
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
+
+
+        // --------otp section------
+        document.addEventListener('DOMContentLoaded', () => {
+            const otpInputs = document.querySelectorAll('.otp-input');
+            let otpValue = '';
+
+            function updateOtpValue() {
+                otpValue = Array.from(otpInputs).map(input => input.value).join('');
+                console.log('Current OTP Value:', otpValue); // For debugging purposes
+            }
+
+            otpInputs.forEach((input, index) => {
+                input.addEventListener('input', () => {
+                    if (input.value.length >= input.maxLength) {
+                        const nextInput = otpInputs[index + 1];
+                        if (nextInput) {
+                            nextInput.focus();
+                        }
+                    }
+                    updateOtpValue();
+                });
+
+                // Optional: Move focus to previous field with backspace if current field is empty
+                input.addEventListener('keydown', (event) => {
+                    if (event.key === 'Backspace' && input.value.length === 0 && index > 0) {
+                        otpInputs[index - 1].focus();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

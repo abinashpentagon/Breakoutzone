@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>BreakoutZone</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="One page parallax responsive HTML Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Themefisher Bingo HTML Template v1.0">
+  <meta name="theme-name" content="bingo" />
+  <link rel="shortcut icon" type="image/x-icon" href="../images/breakoutzone.jpg" />
+  <link rel="stylesheet" href="/plugins/themefisher-font/style.css">
+  <link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="/plugins/lightbox2/css/lightbox.min.css">
+  <link rel="stylesheet" href="/plugins/animate/animate.css">
+  <link rel="stylesheet" href="/plugins/slick/slick.css">
+  <link rel="stylesheet" href="/css/_common.css">
+  <link rel="stylesheet" href="/css/_responsive.css">
+  <link rel="stylesheet" href="/css/_media-queries.css">
+  <link rel="stylesheet" href="/css/_typography.css">
+  <link rel="stylesheet" href="/css/templates/_404.css">
+  <link rel="stylesheet" href="/css/templates/_about_us.css">
+  <link rel="stylesheet" href="/css/templates/_blog.css">
+  <link rel="stylesheet" href="/css/templates/_blogBZ.css">
+  <link rel="stylesheet" href="/css/templates/_call-to-action.css">
+  <link rel="stylesheet" href="/css/templates/_commmunity.css">
+  <link rel="stylesheet" href="/css/templates/_contact.css">
+  <link rel="stylesheet" href="/css/templates/_counter.css">
+  <link rel="stylesheet" href="/css/templates/_header.css">
+  <link rel="stylesheet" href="/css/templates/_footer.css">
+  <link rel="stylesheet" href="/css/templates/_hero-area.css">
+  <link rel="stylesheet" href="/css/templates/_navigation.css">
+  <link rel="stylesheet" href="/css/templates/_portfolio.css">
+  <link rel="stylesheet" href="/css/templates/_pricing.css">
+  <link rel="stylesheet" href="/css/templates/_services.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+  <link rel="stylesheet" href="css/templates/toolB.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  <script src="https://kit.fontawesome.com/beecdd24a6.js" crossorigin="anonymous"></script>
+</head>
+
+<body id="body">
+
+  <!-- Start Preloader -->
+  <div id="preloader">
+    <div class='preloader'>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <!-- End Preloader -->
+
+  <!-- Fixed Navigation -->
+  <header class="navigation fixed-top">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light px-0">
+        <a class="navbar-brand logo" href="index.html">
+          <img loading="lazy" class="logo-default" src="/images/160.png" alt="logo" />
+          <img loading="lazy" class="logo-white" src="/images/white.png" alt="logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navigation">
+          <ul class="navbar-nav ml-auto text-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Resources</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#!" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Community <i class="tf-ion-chevron-down"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="community.html">BreakoutZone Traders</a></li>
+                <li><a class="dropdown-item" href="community_admin.html">BreakoutZone Community</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown active">
+              <a class="nav-link dropdown-toggle" href="#!" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Tools<i class="tf-ion-chevron-down"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="">Tool A</a></li>
+                <li><a class="dropdown-item" href="">Tool B</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="st">Strategies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item sign-btn">
+              <a class="nav-link" href="sign.html">
+                <button id="sign-in">
+                  Sign in
+                  <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                  </div>
+                </button>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- End Fixed Navigation -->
+  <section class="single-page-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Tool B</h2>
+          <ol class="breadcrumb header-bradcrumb justify-content-center">
+            <li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Tool B</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="tool-container">
+    <div class="input-section">
+      <div>
+        <label for="capital">Initial Capital:</label>
+        <input type="range" id="capital" name="capital" min="1000" max="1000000" value="10000" step="100"
+          oninput="updateValues()">
+        <span id="capital-value">Rs.10,000</span>
+      </div>
+
+      <div>
+        <label for="win_ratio">Win Ratio (%):</label>
+        <input type="range" id="win_ratio" name="win_ratio" min="0" max="100" value="60" step="1"
+          oninput="updateValues()">
+        <span id="win-ratio-value">60%</span>
+      </div>
+
+      <div>
+        <label for="risk_reward_ratio">Risk-Reward Ratio:</label>
+        <input type="range" id="risk_reward_ratio" name="risk_reward_ratio" min="0.1" max="5" value="2" step="0.1"
+          oninput="updateValues()">
+        <span id="risk-reward-ratio-value">2</span>
+
+      </div>
+
+      <div>
+        <label for="risk_percentage">Risk Percentage (% of capital):</label>
+        <input type="range" id="risk_percentage" name="risk_percentage" min="0.1" max="10" value="2" step="0.1"
+          oninput="updateValues()">
+        <span id="risk-percentage-value">2%</span>
+      </div>
+
+      <div>
+        <label for="num_trades">Number of Trades:</label>
+        <input type="range" id="num_trades" name="num_trades" min="1" max="1000" value="100" step="10"
+          oninput="updateValues()">
+        <span id="num-trades-value">100</span>
+      </div>
+
+    </div>
+
+    <div class="output-section">
+      <div class="chart-container">
+        <canvas id="trading-chart"></canvas>
+      </div>
+
+      <div class="results">
+        <p>Total Capital: <span id="total-capital">RS.0</span></p>
+        <p>Estimated Returns: <span id="estimated-returns">RS.0</span></p>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
+<footer id="footer" class="bg-one">
+  <div class="top-footer">
+    <div class="container">
+      <div class="row justify-content-around">
+        <div class="col-lg-5 col-md-6 mb-5 mb-lg-0">
+          <h3>about</h3>
+          <p>Integer posuere erat a ante venenati dapibus posuere velit aliquet. Fusce dapibus, tellus cursus commodo,
+            tortor mauris sed posuere.</p>
+        </div>
+        <!-- End of .col-sm-3 -->
+
+        <!-- End of .col-sm-3 -->
+
+        <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+          <ul>
+            <li>
+              <h3>Our Services</h3>
+            </li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="index.html">Resourses</a></li>
+            <li><a href="index.html">Community</a></li>
+            <li><a href="index.html">Strategies</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+          </ul>
+        </div>
+        <!-- End of .col-sm-3 -->
+
+        <div class="col-lg-4 col-md-6">
+          <ul>
+            <li>
+              <h3>Connect with us Socially</h3>
+            </li>
+            <li><a href="https://www.youtube.com/channel/UCx9qVW8VF0LmTi4OF2F8YdA">Youtube</a></li>
+            <li><a href="https://www.twitter.com/themefisher/">Instagram</a></li>
+          </ul>
+        </div>
+        <!-- End of .col-sm-3 -->
+
+      </div>
+    </div> <!-- end container -->
+  </div>
+  <div class="footer-bottom">
+    <h5>Breakout Zone</h5>
+    <h5>&copy; Copyright 2024. All rights reserved.</h5>
+  </div>
+</footer> <!-- end footer -->
+
+
+
+<!-- Scripts -->
+<script src="/plugins/jquery/jquery.min.js"></script>
+<script src="/plugins/bootstrap/bootstrap.min.js"></script>
+<script src="/plugins/slick/slick.min.js"></script>
+<script src="/plugins/lightbox2/js/lightbox.min.js"></script>
+<script src="/plugins/filterizr/jquery.filterizr.min.js"></script>
+<script src="/plugins/parallax/jquery.parallax-1.1.3.js"></script>
+<script src="/plugins/smooth-scroll/smooth-scroll.min.js"></script>
+<script src="/js/custom.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU"></script>
+<script src="plugins/google-map/gmap.js"></script>
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const capitalInput = document.getElementById('capital');
+    const winRatioInput = document.getElementById('win_ratio');
+    const riskRewardInput = document.getElementById('risk_reward_ratio');
+    const riskPercentageInput = document.getElementById('risk_percentage');
+    const numTradesInput = document.getElementById('num_trades');
+
+    let chart;  // Global chart variable
+
+    function updateValues() {
+      const capital = parseFloat(capitalInput.value);
+      const winRatio = parseFloat(winRatioInput.value) / 100;
+      const riskRewardRatio = parseFloat(riskRewardInput.value);
+      const riskPercentage = parseFloat(riskPercentageInput.value) / 100;
+      const numTrades = parseInt(numTradesInput.value);
+
+      document.getElementById('capital-value').innerHTML = "&#8377;${capital.toLocaleString()}";
+      document.getElementById('win-ratio-value').innerText = "${(winRatio * 100).toFixed(1)}%";
+      document.getElementById('risk-reward-ratio-value').innerText = riskRewardRatio.toFixed(1);
+      document.getElementById('risk-percentage-value').innerText = "${(riskPercentage * 100).toFixed(1)}%";
+      document.getElementById('num-trades-value').innerText = numTrades;
+
+      // Perform the trading strategy calculation
+      let currentCapital = capital;
+      for (let i = 0; i < numTrades; i++) {
+        const profitPerTrade = (winRatio * riskRewardRatio - (1 - winRatio)) * riskPercentage * currentCapital;
+        currentCapital += profitPerTrade;
+      }
+
+      document.getElementById('total-capital').innerHTML = "&#8377;${currentCapital.toLocaleString()}";
+      document.getElementById('estimated-returns').innerHTML = "&#8377;${(currentCapital - capital).toLocaleString()}";
+
+      // Update chart
+      updateChart(capital, currentCapital - capital);
+    }
+
+    function updateChart(invested, returns) {
+      const ctx = document.getElementById('trading-chart').getContext('2d');
+
+      if (chart) {
+        chart.destroy();  // Destroy the previous chart instance
+      }
+
+      chart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Invested Amount', 'Estimated Returns'],
+          datasets: [{
+            data: [invested, returns],
+            backgroundColor: ['#4caf50', '#2196f3'],
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'bottom',
+            }
+          }
+        }
+      });
+    }
+
+    updateValues(); // Initial call to set default values
+
+    // Add event listeners to all input sliders
+    capitalInput.addEventListener('input', updateValues);
+    winRatioInput.addEventListener('input', updateValues);
+    riskRewardInput.addEventListener('input', updateValues);
+    riskPercentageInput.addEventListener('input', updateValues);
+    numTradesInput.addEventListener('input', updateValues);
+  });
+
+</script>
+<script>
+  window.addEventListener('load', function () {
+    document.getElementById('preloader').classList.add('hidden');
+  });
+</script>
+</body>
+
+</html>
