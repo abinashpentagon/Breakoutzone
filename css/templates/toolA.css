@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-:root{
+:root {
     --color-primary: #7380ec;
     --color-danger: #ff7782;
     --color-success: #41f1b6;
@@ -9,7 +9,7 @@
     --color-info-dark: #7d8da1;
     --color-info-light: #dce1eb;
     --color-dark: #363949;
-    --color-light: rgba(132,139,200,0.18);
+    --color-light: rgba(132, 139, 200, 0.18);
     --color-primary-variant: #111e88;
     --color-dark-variant: #677483;
     --color-background: #f6f6f9;
@@ -47,17 +47,15 @@
     height: 350px;
     background: var(--color-white);
     padding: var(--card-padding);
-    border-radius: var(--card-border-radius);
-    box-shadow: var(--box-shadow);
+    border-radius: 7px;
+
     margin: 50px;
     max-width: 600px;
     width: 300px;
     transition: all 300ms ease;
 }
 
-.calculations:hover {
-    box-shadow: none;
-}
+
 
 .calculations h1 {
     font-size: 1.8rem;
@@ -73,6 +71,7 @@
     margin-bottom: 1rem;
 }
 
+
 .calculations label {
     font-size: 1.1rem;
     color: var(--color-dark);
@@ -86,7 +85,7 @@
     padding: 0.8rem;
     border-radius: var(--border-radius-2);
     font-size: 1.1rem;
-    border: 1px solid var(--color-info-light);
+    border: 6px solid var(--color-info-light);
     background: var(--color-background);
     color: var(--color-dark);
     transition: all 300ms ease;
@@ -144,7 +143,7 @@ small {
     color: var(--color-dark-variant);
 }
 
-.calc-container b{
+.calc-container b {
     color: var(--color-dark);
 }
 
@@ -163,6 +162,7 @@ small {
 .warning {
     color: var(--color-warning);
 }
+
 /* Delta Calculator Styles */
 .stop-loss-calculator {
     background: var(--color-white);
@@ -176,6 +176,7 @@ small {
     height: auto;
     font-size: 10px;
 }
+
 .stop-loss-calculator:hover {
     box-shadow: none;
 }
@@ -249,4 +250,80 @@ small {
 .button-group {
     display: flex;
     justify-content: center;
+}
+
+
+.form-group input {
+    padding: 4px;
+    border-radius: 1px;
+}
+
+.form-group select {
+    padding: 4px;
+    border-radius: 1px;
+}
+
+.calc-container button {
+    padding: 4px;
+    border-radius: 1px;
+}
+
+/* Styling for Popup */
+.popup {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    z-index: 9;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black background with opacity */
+}
+
+/* Popup content styling */
+.popup-content {
+    background-color: white;
+    margin: 15% auto;
+    /* padding: 15px; */
+
+    width: 40%;
+    border-radius: 7px;
+
+
+
+}
+
+/* 
+.flex-pop
+{
+    display: flex;
+    justify-content: center;
+} 
+
+/* Close button */
+.close-btn {
+    color: red;
+    /* float: right; */
+    font-size: 30px;
+    cursor: pointer;
+    margin-top: 10px;
+    /* margin-right: 6px; */
+
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.stop-loss-calculator {
+    margin: 20px;
+}
+
+.flex-pop {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px auto;
 }
