@@ -170,8 +170,15 @@
     var scroll = $(window).scrollTop();
     if (scroll > 50) {
       $('.navigation').addClass('sticky-header ');
-    } else {
+      $('.fa-cart-shopping').css("color","black");
+      $('.fa-user').css("color","black");
+      $('#num').css("color","black");
+    }
+     else {
       $('.navigation').removeClass('sticky-header');
+      $('.fa-cart-shopping').css("color","white");
+      $('.fa-user').css("color","white");
+      $('#num').css("color","white");
     }
   });
 
