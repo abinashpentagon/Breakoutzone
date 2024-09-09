@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>BreakoutZone</title>
@@ -15,7 +16,7 @@
   <link rel="stylesheet" href="plugins/lightbox2/css/lightbox.min.css">
   <link rel="stylesheet" href="plugins/animate/animate.css">
   <link rel="stylesheet" href="plugins/slick/slick.css">
-  <link rel="stylesheet" href="css/_common.css"> 
+  <link rel="stylesheet" href="css/_common.css">
   <link rel="stylesheet" href="css/_responsive.css">
   <link rel="stylesheet" href="css/_media-queries.css">
   <link rel="stylesheet" href="css/_typography.css">
@@ -36,6 +37,7 @@
   <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
   <script src="https://kit.fontawesome.com/beecdd24a6.js" crossorigin="anonymous"></script>
 </head>
+
 <body id="body">
 
   <!-- Start Preloader -->
@@ -59,7 +61,8 @@
           <img loading="lazy" class="logo-default" src="images/160.png" alt="logo" />
           <img loading="lazy" class="logo-white" src="images/white.png" alt="logo" />
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navigation">
@@ -71,7 +74,8 @@
               <a class="nav-link" href="blog.html">Resources</a>
             </li>
             <li class="nav-item dropdown active">
-              <a class="nav-link dropdown-toggle" href="#!" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#!" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
                 Community <i class="tf-ion-chevron-down"></i>
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -119,32 +123,32 @@
   <!-- End Page Header -->
 
   <!-- Main Content -->
-  
+
 
   <main class="community">
     <section id="user">
-  
+
       <div class="card-small">
         <img
           src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Ffree-photos-vectors%2Fimg-file&psig=AOvVaw1I53xtykinAfADyS95ub_g&ust=1722921085622000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMiy66uL3YcDFQAAAAAdAAAAABAE">
         <!-- <p>Abinash S</p> -->
         <div>
-          <a href="" class="btn">View profile</a>
+          <a href="viewprofile.html" class="btn">View profile</a>
         </div>
-  
-  
+
+
       </div>
-  
+
       <div class="card-container">
-  
+
         <div class="upper-container">
           <div class="image-container">
             {% if myuser.profile_pic %}
-                  <img src="data:image/jpeg;base64,{{ myuser.profile_pic | b64encode }}" alt="Profile Picture">
-              {% endif %}
+            <img src="data:image/jpeg;base64,{{ myuser.profile_pic | b64encode }}" alt="Profile Picture">
+            {% endif %}
           </div>
         </div>
-  
+
         <div class="lower-container">
           <div>
             <h3>{{ myuser.username }}</h3>
@@ -152,10 +156,10 @@
           </div>
           <div>
             <p>Email: {{ myuser.email }}</p>
-                  <p>Phone: {{ myuser.phoneno }}</p>
+            <p>Phone: {{ myuser.phoneno }}</p>
           </div>
           <div>
-            <a href="/profilee" class="btn">View profile</a>
+            <a href="viewprofile.html" class="btn">View profile</a>
           </div>
         </div>
       </div>
@@ -164,7 +168,8 @@
       <div class="pricing">
         <br>
         <div class="innerDiv">
-          <img src="{{ url_for('static', filename='profile.png') }}" href="/profilee" alt="Avatar" class="avatar">
+          <img src="{{ url_for('static', filename='profile.png') }}" href="viewprofile.html" alt="Avatar"
+            class="avatar">
           <button href="/post" class="pricingButon">
             What's on your mind?
           </button>
@@ -175,21 +180,21 @@
         {% for post in posts %}
         <div class="card-img-holder">
           {% for user in users %}
-                {% if user.username == post.username %}
+          {% if user.username == post.username %}
           <div class="user-container">
             <img src="data:profile_pic/jpeg;base64,{{ user.profile_pic | b64encode }}" class="avatar-small">
             <a style="font-size: large;">{{ post.username }}</a>
           </div>
           {% endif %}
-                  {% endfor %}	
+          {% endfor %}
           {% if post.image %}
           <img src="data:image/jpeg;base64,{{ post.image|b64encode }}" alt="Post Image">
           {% endif %}
-      
+
         </div>
         <h3 class="blog-title">{{ post.post_title }}</h3>
         <span class="blog-time">Posted on: {{ post.post_date }}</span>
-        
+
         <p class="description">
           {{ post.post_content }}
           <br>
@@ -199,22 +204,22 @@
           <div class="comment-container">
             <div class="comment-icon">
               <i class="fa-regular fa-thumbs-up" id="like" data-post-id="{{ post.post_id }}"></i>
-              
+
             </div>
             <div class="comment-icon">
               <i class="fa-regular fa-comment" id="comment"></i>
             </div>
             <!-- <textarea class="comment-box" placeholder="Write a comment..."></textarea>
             <button class="postcomment">Post</button> -->
-  
+
             <div class="comment-form">
               <form class="add-comment-form" action="/addcomment" method="POST">
                 <input type="hidden" name="post_id" value="{{ post.post_id }}">
-                <textarea name="comment_content" placeholder="Write your comment..."></textarea>
-                <button type="submit">Add Comment</button>
+                <textarea class="comment-box" name="comment_content" placeholder="Write your comment..."></textarea>
+                <button type="submit" class="postcomment">Add Comment</button>
               </form>
             </div>
-  
+
             <p>Likes: <span id="like-count-{{ post.post_id }}">{{ like_counts.get(post.post_id, 0) }}</span></p>
           </div>
         </div>
@@ -222,13 +227,14 @@
       </div>
       <div class="post-card">
         <div class="card-img-holder">
-  
+
           <div class="user-container">
             <img src="/source/images/man.webp" class="avatar-small">
             <a style="font-size: large;">Abinash</a>
           </div>
-  
-          <img src="https://images.unsplash.com/photo-1640102953836-5651f5d6b240?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80"
+
+          <img
+            src="https://images.unsplash.com/photo-1640102953836-5651f5d6b240?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80"
             alt="Blog image">
         </div>
         <h3 class="blog-title">Learn Microinteraction</h3>
@@ -250,10 +256,10 @@
           </div>
         </div>
       </div>
-  
+
     </section>
     <!-- Buy me a coffe script -->
-  
+
     <section id="trend">
       <div class="trending">
         <h4>Top posts</h4><i class="fa-solid fa-arrow-trend-up" id="trendArrow"></i>
@@ -350,10 +356,11 @@
   <script src="js/custom.js"></script>
   <script src="js/script.js"></script>
   <script>
-    window.addEventListener('load', function() {
-    document.getElementById('preloader').classList.add('hidden');
-});
+    window.addEventListener('load', function () {
+      document.getElementById('preloader').classList.add('hidden');
+    });
 
   </script>
 </body>
+
 </html>
