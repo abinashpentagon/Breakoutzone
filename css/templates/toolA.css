@@ -43,6 +43,8 @@
     justify-content: space-around;
 }
 
+
+
 .calculations {
     height: 350px;
     background: var(--color-white);
@@ -167,7 +169,7 @@ small {
 .stop-loss-calculator {
     background: var(--color-white);
     padding: var(--card-padding);
-    border-radius: var(--card-border-radius);
+    border-radius: 7px;
     box-shadow: var(--box-shadow);
     margin: 50px;
     max-width: 600px;
@@ -177,9 +179,7 @@ small {
     font-size: 10px;
 }
 
-.stop-loss-calculator:hover {
-    box-shadow: none;
-}
+
 
 .stop-loss-calculator h1 {
     font-size: 1.8rem;
@@ -326,4 +326,11 @@ small {
     justify-content: center;
     flex-direction: column;
     margin: 20px auto;
+}
+
+
+
+.stop-loss-calculator:hover {
+    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
 }
