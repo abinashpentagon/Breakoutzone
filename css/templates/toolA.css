@@ -61,7 +61,7 @@
 
 .calculations h1 {
     font-size: 1.8rem;
-    color: var(--color-primary);
+    color: black;
     margin-bottom: 1.2rem;
     text-align: center;
 }
@@ -78,6 +78,7 @@
     font-size: 1.1rem;
     color: var(--color-dark);
     width: 40%;
+
 }
 
 .calculations select,
@@ -183,7 +184,7 @@ small {
 
 .stop-loss-calculator h1 {
     font-size: 1.8rem;
-    color: var(--color-primary);
+    color: black;
     margin-bottom: 1.2rem;
     text-align: center;
 }
@@ -199,6 +200,7 @@ small {
     font-size: 1.1rem;
     color: var(--color-dark);
     width: 40%;
+    font-weight: 500;
 }
 
 .stop-loss-calculator select,
@@ -304,7 +306,7 @@ small {
 
 /* Close button */
 .close-btn {
-    color: red;
+    color: white;
     /* float: right; */
     font-size: 30px;
     cursor: pointer;
